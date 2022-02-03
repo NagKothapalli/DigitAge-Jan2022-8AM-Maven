@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Sequential Execution" duration-ms="212" started-at="2022-02-03T11:01:48 IST" finished-at="2022-02-03T11:01:48 IST">
+    <groups>
+    </groups>
+    <test name="Run Tests on Chrome" duration-ms="126" started-at="2022-02-03T11:01:48 IST" finished-at="2022-02-03T11:01:48 IST">
+      <class name="practiceTestNG.SeleniumTestsChrome">
+        <test-method status="PASS" signature="launch()[pri:0, instance:practiceTestNG.SeleniumTestsChrome@782663d3]" name="launch" is-config="true" duration-ms="12" started-at="2022-02-03T11:01:48 IST" finished-at="2022-02-03T11:01:48 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launch -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:practiceTestNG.SeleniumTestsChrome@782663d3]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2022-02-03T11:01:48 IST" finished-at="2022-02-03T11:01:48 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="forwardToEmail()[pri:0, instance:practiceTestNG.SeleniumTestsChrome@782663d3]" name="forwardToEmail" duration-ms="8" started-at="2022-02-03T11:01:48 IST" finished-at="2022-02-03T11:01:48 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- forwardToEmail -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:practiceTestNG.SeleniumTestsChrome@782663d3]" name="afterMethod" is-config="true" duration-ms="3" started-at="2022-02-03T11:01:48 IST" finished-at="2022-02-03T11:01:48 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:practiceTestNG.SeleniumTestsChrome@782663d3]" name="beforeMethod" is-config="true" duration-ms="2" started-at="2022-02-03T11:01:48 IST" finished-at="2022-02-03T11:01:48 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="replyToEmail()[pri:0, instance:practiceTestNG.SeleniumTestsChrome@782663d3]" name="replyToEmail" duration-ms="3" started-at="2022-02-03T11:01:48 IST" finished-at="2022-02-03T11:01:48 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- replyToEmail -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:practiceTestNG.SeleniumTestsChrome@782663d3]" name="afterMethod" is-config="true" duration-ms="1" started-at="2022-02-03T11:01:48 IST" finished-at="2022-02-03T11:01:48 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="close()[pri:0, instance:practiceTestNG.SeleniumTestsChrome@782663d3]" name="close" is-config="true" duration-ms="1" started-at="2022-02-03T11:01:48 IST" finished-at="2022-02-03T11:01:48 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+      </class> <!-- practiceTestNG.SeleniumTestsChrome -->
+    </test> <!-- Run Tests on Chrome -->
+    <test name="Run Tests on Firefox" duration-ms="29" started-at="2022-02-03T11:01:48 IST" finished-at="2022-02-03T11:01:48 IST">
+      <class name="practiceTestNG.SeleniumTestsFirefox">
+        <test-method status="PASS" signature="launch()[pri:0, instance:practiceTestNG.SeleniumTestsFirefox@6fb0d3ed]" name="launch" is-config="true" duration-ms="1" started-at="2022-02-03T11:01:48 IST" finished-at="2022-02-03T11:01:48 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launch -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:practiceTestNG.SeleniumTestsFirefox@6fb0d3ed]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2022-02-03T11:01:48 IST" finished-at="2022-02-03T11:01:48 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="forwardToEmail()[pri:0, instance:practiceTestNG.SeleniumTestsFirefox@6fb0d3ed]" name="forwardToEmail" duration-ms="2" started-at="2022-02-03T11:01:48 IST" finished-at="2022-02-03T11:01:48 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- forwardToEmail -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:practiceTestNG.SeleniumTestsFirefox@6fb0d3ed]" name="afterMethod" is-config="true" duration-ms="2" started-at="2022-02-03T11:01:48 IST" finished-at="2022-02-03T11:01:48 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:practiceTestNG.SeleniumTestsFirefox@6fb0d3ed]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2022-02-03T11:01:48 IST" finished-at="2022-02-03T11:01:48 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="replyToEmail()[pri:0, instance:practiceTestNG.SeleniumTestsFirefox@6fb0d3ed]" name="replyToEmail" duration-ms="3" started-at="2022-02-03T11:01:48 IST" finished-at="2022-02-03T11:01:48 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- replyToEmail -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:practiceTestNG.SeleniumTestsFirefox@6fb0d3ed]" name="afterMethod" is-config="true" duration-ms="1" started-at="2022-02-03T11:01:48 IST" finished-at="2022-02-03T11:01:48 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="close()[pri:0, instance:practiceTestNG.SeleniumTestsFirefox@6fb0d3ed]" name="close" is-config="true" duration-ms="2" started-at="2022-02-03T11:01:48 IST" finished-at="2022-02-03T11:01:48 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+      </class> <!-- practiceTestNG.SeleniumTestsFirefox -->
+    </test> <!-- Run Tests on Firefox -->
+  </suite> <!-- Sequential Execution -->
+</testng-results>

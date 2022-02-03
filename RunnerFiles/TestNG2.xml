@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Sequential Execution" >
+  <test verbose="2" name="Run Tests on Chrome">
+    <classes>
+      <class name="practiceTestNG.SeleniumTestsChrome">
+       
+      </class> <!-- testNG.TestNGPractice -->
+    </classes>
+  </test> <!-- Default test -->
+  <test verbose="2" name="Run Tests on Firefox">
+    <classes>
+      <class name="practiceTestNG.SeleniumTestsFirefox">
+       
+      </class> <!-- testNG.TestNGPractice -->
+    </classes>
+  </test> <!-- Default test -->
+</suite> <!-- Default suite -->
