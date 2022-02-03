@@ -20,7 +20,7 @@ public class AppTest
 	  "D:\\Softwares\\JarFiles\\chromedriver-win32-90\\chromedriver.exe"); 
 	  driver = new ChromeDriver(); // a new empty chrome browser will be opened
 	}	
-	
+	//-----------------------------
 	@Before
 	public void launchApplication()
 	{
