@@ -1,10 +1,10 @@
 package testBatches;
 
-//import org.junit.After;
-//import org.junit.Test;
+import org.junit.After;
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.Test;
+//import org.testng.annotations.AfterTest;
+//import org.testng.annotations.Test;
 
 import appUtilities.DriverSetUp;
 import gUtilities.ReadProperties;
@@ -70,7 +70,7 @@ public class TestBatches
 		testCases.bookBusTicketAndCheckStatus();
 	}
 	//@After   // Junit
-	@AfterTest   // TestNG
+	//@AfterTest   // TestNG
 	public void cleanUp()
 	{
 		driver.quit();
