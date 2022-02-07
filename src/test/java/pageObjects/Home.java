@@ -32,9 +32,10 @@ public class Home
 		@FindBy(xpath = "//input[@name='destination']")  WebElement toCityObj;
 		@FindBy(xpath = "//input[@name='txtJourneyDate']")  WebElement openCalendarBtn;
 		@FindBy(xpath = "//input[@name='searchBtn']")  WebElement searchBtn;
-		@FindBy(xpath = "//a[@title='Home']")  WebElement homeBtn;
+		@FindBy(xpath = "//a[@title='Home']")  WebElement homeBtn;  //a[@id='sbkg']
+		@FindBy(xpath = "//a[@id='sbkg']")  WebElement modifiySearchBtn;
 		//---------------------------------------------
-	public void navigateToHome()
+	public boolean navigateToHome()
 	{
 		System.out.println("RC : Navigate to Home");
 		//explicit wait
@@ -42,9 +43,13 @@ public class Home
 		wait.until(ExpectedConditions.elementToBeClickable(homeBtn));
 		//GeneralUtility.fixedWait(30);
 		appUtils.getElement("//a[@title='Home']").click();
+		if(fromCityObj.isEnabled())
+			return true;
+		else
+			return false;
 	}
 	
-	public void bookTicket()
+	public boolean bookTicket()
 	{
 		System.out.println("RC : Book Ticket");
 		fromCityObj.sendKeys(data.readData("FromCity"));
@@ -57,7 +62,16 @@ public class Home
 		appUtils.getElement("//a[text()='"+data.readData("JDate")+"']").click();
 		searchBtn.click();
 		GeneralUtility.fixedWait(1);
-		homeBtn.click();
+		if(modifiySearchBtn.getText().trim().equalsIgnoreCase("Modify Search"))
+		{
+			homeBtn.click();
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+		
 	}
 	public void bookTicket_old()
 	{
@@ -75,9 +89,10 @@ public class Home
 		GeneralUtility.fixedWait(1);
 		appUtils.getElement("//a[@title='Home']").click();
 	}
-	public void printTicket()
+	public boolean printTicket()
 	{
 		System.out.println("RC : Print Ticket");
+		return true;
 	}
 
 }

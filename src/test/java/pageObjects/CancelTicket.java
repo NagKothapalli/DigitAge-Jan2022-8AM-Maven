@@ -24,16 +24,18 @@ public class CancelTicket
 	//-----------------WebElements-----------------
 		@FindBy(xpath = "//a[@title='Cancel Ticket']")  WebElement cancelTktObj;
 	//---------------------------------------------
-	public void navigateToCancelTicket()
+	public boolean navigateToCancelTicket()
 	{
 		System.out.println("RC : Navigate to CancelTicket");
 		//appUtils.getElement("//a[@title='Cancel Ticket']").click();
 		cancelTktObj.click();
+		return true;
 	}
-	public void cancelTheTicket()
+	public boolean cancelTheTicket()
 	{
 		System.out.println("RC : Cancel The Ticket");
 		appUtils.getElement("//input[@name='id' ]").sendKeys(data.readData("TicketNumber"));
+		return false;
 	}
 
 }

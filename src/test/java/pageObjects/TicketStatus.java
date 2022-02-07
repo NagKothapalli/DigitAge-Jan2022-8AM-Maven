@@ -24,16 +24,18 @@ public class TicketStatus
 	//-----------------WebElements-----------------
 		@FindBy(xpath = "//a[@title='Ticket Status']")  WebElement ticketStatusTab;
 	//---------------------------------------------
-	public void navigateToTicketStatus()
+	public boolean navigateToTicketStatus()
 	{
 		System.out.println("RC : Navigate to TicketStatus");
 		//appUtils.getElement("//a[@title='Ticket Status']").click();
 		ticketStatusTab.click();
+		return true;
 	}
-	public void checkTicketStatus()
+	public boolean checkTicketStatus()
 	{
 		System.out.println("RC : Check Ticket Status");		
 		appUtils.getElement("//input[@name='id' and @class='searchTktCancel']").sendKeys(data.readData("TicketNumber"));
+		return true;
 	}
 
 }

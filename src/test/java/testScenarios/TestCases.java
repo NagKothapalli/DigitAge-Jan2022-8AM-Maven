@@ -1,14 +1,24 @@
 package testScenarios;
 
+import java.io.File;
+import java.util.Random;
+
+import org.apache.commons.io.FileUtils;
 import org.junit.Test;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 
 import pageObjects.CancelTicket;
 import pageObjects.Home;
 import pageObjects.Login;
 import pageObjects.TicketStatus;
 import pageObjects.TrackService;
+import testBatches.TestBatches;
 
 public class TestCases
 {
@@ -18,6 +28,7 @@ public class TestCases
 	TicketStatus ticketStatus;
 	TrackService trackService;
 	CancelTicket cancelTicket;
+	ExtentTest child;
 	public TestCases(WebDriver driver)
 	{	
 		this.driver = driver;
@@ -34,70 +45,123 @@ public class TestCases
 	}
 	//launch,login,bookTicket,PrintTicket,logout,close  - Test Steps
 	//TC-001 : Step1 : 1.1,1.2,1.3
-	@Test
-	public void bookBusTicketAndPrint() //TestCase
+	boolean result;
+	public void logReport(boolean flag,String stepName)
 	{
+		if(flag)
+		{
+			child.log(LogStatus.PASS, stepName,"Successfull");
+		}
+		else
+		{
+			child.log(LogStatus.FAIL,child.addScreenCapture(TakeErrorScreenShot(stepName)) ,stepName);
+		}
+	}
+	String screenshotfilepath;
+	public String TakeErrorScreenShot(String fname)
+	{
+			File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			try {
+				screenshotfilepath = new File(".").getCanonicalPath()+"\\ScreenShots\\"+fname+new Random().nextInt(9999)+".png";
+				FileUtils.copyFile(scrFile, new File(screenshotfilepath));
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}     
+	          scrFile = null;
+	        return screenshotfilepath;
+	}
+
+	@Test
+	public void bookBusTicketAndPrint() //TestCase  // I will create my own object and i will add myself to my parent
+	{
+		child = TestBatches.extent.startTest("BookBusTicketAndPrint");
+		TestBatches.parent.appendChild(child);
 		System.out.println("Test Case : BookBusTicketAndPrint");
-		login.launchApplication();
-		login.loginToApplication();
-		home.navigateToHome();
-		home.bookTicket();
-		home.printTicket();
-		login.logoutFromApplication();
-		login.closeApplication();		
+		result = login.launchApplication();
+		if(result)
+		{
+			child.log(LogStatus.PASS, "LaunchApplication","Successfull");
+		}
+		else
+		{
+			child.log(LogStatus.FAIL, "LaunchApplication","Failed");
+		}
+		
+		result = login.loginToApplication(); 
+		logReport(result,"Login");
+		logReport(home.navigateToHome(),"NavigateToHome");
+		logReport(home.bookTicket(),"bookTicket");
+		logReport(home.printTicket(),"printTicket");
+		logReport(login.logoutFromApplication(),"logoutFromApplication");
+		logReport(login.closeApplication(),"closeApplication");
+				
 	}
 	@Test
 	public void bookBusTicketAndCheckStatus() //TestCase
 	{
+		child = TestBatches.extent.startTest("BookBusTicketAndCheckStatus");
+		TestBatches.parent.appendChild(child);
 		System.out.println("Test Case : bookBusTicketAndCheckStatus");
-		login.launchApplication();
-		login.loginToApplication();
-		home.navigateToHome();
-		home.bookTicket();
-		ticketStatus.navigateToTicketStatus();
-		ticketStatus.checkTicketStatus();
-		login.logoutFromApplication();
-		login.closeApplication();
+			
+		logReport(login.launchApplication(),"launchApplication");
+		logReport(login.loginToApplication(),"loginToApplication");
+		logReport(home.navigateToHome(),"NavigateToHome");
+		logReport(home.bookTicket(),"bookTicket");
+		logReport(ticketStatus.navigateToTicketStatus(),"navigateToTicketStatus");
+		logReport(ticketStatus.checkTicketStatus(),"checkTicketStatus");
+		logReport(login.logoutFromApplication(),"logoutFromApplication");
+		logReport(login.closeApplication(),"closeApplication");
 	}
 	@Test
 	public void bookBusTicketAndTrackService() //TestCase
 	{
+		child = TestBatches.extent.startTest("BookBusTicketAndTrackService");
+		TestBatches.parent.appendChild(child);
 		System.out.println("Test Case : bookBusTicketAndTrackService");
-		login.launchApplication();
-		login.loginToApplication();
-		home.navigateToHome();
-		home.bookTicket();
-		trackService.navigateToTrackService();
-		trackService.trackTicketService();
-		login.logoutFromApplication();
-		login.closeApplication();
+				
+		logReport(login.launchApplication(),"launchApplication");
+		logReport(login.loginToApplication(),"loginToApplication");
+		logReport(home.navigateToHome(),"NavigateToHome");
+		logReport(home.bookTicket(),"bookTicket");
+		logReport(trackService.navigateToTrackService(),"navigateToTrackService");
+		logReport(trackService.trackTicketService(),"trackTicketService");
+		logReport(login.logoutFromApplication(),"logoutFromApplication");
+		logReport(login.closeApplication(),"closeApplication");
+		
 	}
 	@Test
 	public void bookBusTicketAndCancel() //TestCase
 	{
+		child = TestBatches.extent.startTest("BookBusTicketAndCancel");
+		TestBatches.parent.appendChild(child);
 		System.out.println("Test Case : bookBusTicketAndCancel");
-		login.launchApplication();
-		login.loginToApplication();
-		home.navigateToHome();
-		home.bookTicket();
-		cancelTicket.navigateToCancelTicket();
-		cancelTicket.cancelTheTicket();
-		login.logoutFromApplication();
-		login.closeApplication();
+				
+		logReport(login.launchApplication(),"launchApplication");
+		logReport(login.loginToApplication(),"loginToApplication");
+		logReport(home.navigateToHome(),"NavigateToHome");
+		logReport(home.bookTicket(),"bookTicket");
+		logReport(cancelTicket.navigateToCancelTicket(),"navigateToCancelTicket");
+		logReport(cancelTicket.cancelTheTicket(),"cancelTheTicket");
+		logReport(login.logoutFromApplication(),"logoutFromApplication");
+		logReport(login.closeApplication(),"closeApplication");
 	}
 	@Test
 	public void bookBusTicketPrintAndTrackService() //TestCase
 	{
+		child = TestBatches.extent.startTest("BookBusTicketPrintAndTrackService");
+		TestBatches.parent.appendChild(child);
 		System.out.println("Test Case : bookBusTicketPrintAndTrackService");
-		login.launchApplication();
-		login.loginToApplication();
-		home.navigateToHome();
-		home.bookTicket();
-		home.printTicket();
-		trackService.navigateToTrackService();
-		trackService.trackTicketService();
-		login.logoutFromApplication();
-		login.closeApplication();
+				
+		logReport(login.launchApplication(),"launchApplication");
+		logReport(login.loginToApplication(),"loginToApplication");
+		logReport(home.navigateToHome(),"NavigateToHome");
+		logReport(home.bookTicket(),"bookTicket");
+		logReport(home.printTicket(),"printTicket");
+		logReport(trackService.navigateToTrackService(),"navigateToTrackService");
+		logReport(trackService.trackTicketService(),"trackTicketService");
+		logReport(login.logoutFromApplication(),"logoutFromApplication");
+		logReport(login.closeApplication(),"closeApplication");
 	}
 	
 	

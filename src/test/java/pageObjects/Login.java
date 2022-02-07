@@ -24,24 +24,31 @@ public class Login
 	//-----------------WebElements-----------------
 		@FindBy(xpath = "//a[@title='Home']")  WebElement homeBtn;
 	//---------------------------------------------
-	public void launchApplication()
+	public boolean launchApplication()
 	{
 		System.out.println("RC : Launch Application");	
-		//driver.get(data.readData("URL"));
+		driver.get(data.readData("URL"));
+		if(driver.getTitle().equals(data.readData("ExpectedTitle")))
+			return true;
+		else
+			return false;
 	}
-	public void loginToApplication()
+	public boolean loginToApplication()
 	{
-		System.out.println("RC : Login To Application");		
+		System.out.println("RC : Login To Application");
+		return true;
 	}
-	public void logoutFromApplication()
+	public boolean logoutFromApplication()
 	{
 		System.out.println("RC : Logout From Application");
 		//appUtils.getElement("//a[@title='Home']").click();
 		homeBtn.click();
+		return true;
 	}
-	public void closeApplication()
+	public boolean closeApplication()
 	{
-		System.out.println("RC : Close Application");		
+		System.out.println("RC : Close Application");	
+		return true;
 	}
 
 }

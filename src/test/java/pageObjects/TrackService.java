@@ -24,16 +24,18 @@ public class TrackService
 	//-----------------WebElements-----------------
 		@FindBy(xpath = "//a[@title='Track Service']")  WebElement trackServiceTab;
 	//---------------------------------------------
-	public void navigateToTrackService()
+	public boolean navigateToTrackService()
 	{
 		System.out.println("RC : Navigate to TrackService");
 		//appUtils.getElement("//a[@title='Track Service']").click();
 		trackServiceTab.click();
+		return true;
 	}
-	public void trackTicketService()
+	public boolean trackTicketService()
 	{
 		System.out.println("RC : Track Ticket Service");
 		appUtils.getElement("//input[@name='serviceCode']").sendKeys(data.readData("ServiceNumber"));
+		return true;
 	}
 
 }
